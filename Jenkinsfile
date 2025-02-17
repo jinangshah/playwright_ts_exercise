@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/your-repo.git'
+                git 'https://github.com/jinangshah/playwright_ts_exercise.git'
             }
         }
         stage('Install Dependencies') {
@@ -13,13 +13,12 @@ pipeline {
         }
         stage('Run Playwright Tests') {
             steps {
-                sh 'npx playwright install --with-deps'
-                sh 'npx playwright test'
+                npm run test
             }
         }
         stage('Publish Report') {
-            always {
-                archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
+            steps {
+                npm run report
             }
         }
     }
