@@ -17,5 +17,8 @@ When('User enters password as {string}', async function(username,password){
 
 Then('User should be able to Login', async function(){
     await new loginPage(this.page).loginSuccess();
-    await new loginPage(this.page).loginFail();
 });
+
+Then('User should not be able to Login', async function(){
+    await new loginPage(this.page).loginFail();
+})

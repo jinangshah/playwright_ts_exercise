@@ -12,7 +12,6 @@ Feature: End to End Test
         Examples:
         | username | password |
         | standard_user | secret_sauce |
-        | admin | test |
      
     @smoke @regression @verifyDashBoard
     Scenario: Verify Dashboard

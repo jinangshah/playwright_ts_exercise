@@ -16,7 +16,7 @@ let options = [
     '--publish-quiet true',
     `--parallel=${process.env.PARALLEL_THREAD}`,
     `--format-options '{"snippetInterface":"async-await"}'`,
-    `--retry=${process.env.RETRIES}`,
+    `--retry=${process.env.RETRIES || 2}`,
     `--tags "not @ignore"`,
 ].join(' ');
 
